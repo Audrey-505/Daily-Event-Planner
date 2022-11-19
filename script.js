@@ -25,5 +25,27 @@ $(function () {
   var dateEl = $('#currentDay')
   var todayDate = moment().format('dddd')
   dateEl.text(`Today is: ${todayDate}`)
+
+  // TODO: Add a listener for click events on the save button. This code should
+  // use the id in the containing time-block as a key to save the user input in
+  // local storage.
+  /* var blockNine = $('#hour-9')
+  var saveBtn = blockNine.children()
+  saveBtn.on('click', function (){
+    var nineID = saveBtn.parent().attr('id')
+    console.log(nineID)
+    var valueOfEvent = 5
+    localStorage.setItem(nineID, valueOfEvent)
+    var result = localStorage.getItem(nineID)
+    console.log(result)
+  }) */
+  var valueOfEvent = 10
+  var saveBtn = $('.btn')
+  saveBtn.on('click', function (event){
+  var hourBlock = event.target.parentNode.id 
+  console.log(hourBlock)
+  //localStorage.setItem(hourBlock, valueOfEvent)
+  //localStorage.getItem(hourBlock)
+  })
   
 });
