@@ -51,21 +51,214 @@ $(document).ready(function () {
   var currentHour = moment().format('h')
   var fullReadyHour = `hour-${currentHour}`
   var readyHour = fullReadyHour.substring(5,7)
+  var timeNow = parseInt(readyHour)
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  //block 9
+  var nineHour = $('#hour-9')
+  var idOfNine = nineHour.attr('id')
+  var nineHourReady = idOfNine.substring(5,7)
+  var nineSelec = parseInt(nineHourReady)
+  var classHolder9 = $('#nine')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === nineSelec){
+  classHolder9.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < nineSelec){
+    classHolder9.attr('class', 'table-success')
+  } else {
+    classHolder9.attr('class', 'table-secondary')
+  }
+  
+  //block 10
+  var tenHour = $('#hour-10')
+  var idOfTen = tenHour.attr('id')
+  var tenHourReady = idOfTen.substring(5,7)
+  var tenSelec = parseInt(tenHourReady)
+  var classHolder10 = $('#ten')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === tenSelec){
+  classHolder10.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < tenSelec){
+    classHolder10.attr('class', 'table-success')
+  } else {
+    classHolder10.attr('class', 'table-secondary')
+  }
+
+  //block 11
   var elevenHour = $('#hour-11')
   var idOfEleven = elevenHour.attr('id')
   var elevenHourReady = idOfEleven.substring(5,7)
-  var timeNow = parseInt(readyHour)
-  console.log(timeNow)
   var elevenSelec = parseInt(elevenHourReady)
-  var classHolder = $('#eleven')
+  var classHolder11 = $('#eleven')
 
-  
-  if (timeNow === elevenSelec){
-  classHolder.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
-  } else if (timeNow < elevenSelec){
-    classHolder.attr('class', 'table-success')
-  } else {
-    classHolder.attr('class', 'table-secondary')
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
   }
+
+  if (timeNow === elevenSelec){
+  classHolder11.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < elevenSelec){
+    classHolder11.attr('class', 'table-success')
+  } else {
+    classHolder11.attr('class', 'table-secondary')
+  }
+
+  //block 12
+  var tweleveHour = $('#hour-12')
+  var idOfTweleve = tweleveHour.attr('id')
+  var tweleveHourReady = idOfTweleve.substring(5,7)
+  var tweleveSelec = parseInt(tweleveHourReady)
+  var classHolder12 = $('#tweleve')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === tweleveSelec){
+    classHolder12.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < tweleveSelec){
+    classHolder12.attr('class', 'table-success')
+  } else {
+    classHolder12.attr('class', 'table-secondary')
+  }
+
+  //block 1
+  var oneHour = $('#hour-1')
+  var idOfOne = oneHour.attr('id')
+  var oneHourReady = idOfOne.substring(5,7)
+  var oneSelec = parseInt(oneHourReady)
+  console.log(oneSelec)
+  var classHolder1 = $('#one')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === oneSelec){
+  classHolder1.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < oneSelec){
+    classHolder1.attr('class', 'table-success')
+  } else {
+    classHolder1.attr('class', 'table-secondary')
+  }
+
+  //block 2
+  var twoHour = $('#hour-2')
+  var idOfTwo = twoHour.attr('id')
+  var twoHourReady = idOfTwo.substring(5,7)
+  var twoSelec = parseInt(twoHourReady)
+  console.log(twoSelec)
+  var classHolder2 = $('#two')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === twoSelec){
+  classHolder2.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < twoSelec){
+    classHolder2.attr('class', 'table-success')
+  } else {
+    classHolder2.attr('class', 'table-secondary')
+  }
+
+  //block 3
+  var threeHour = $('#hour-3')
+  var idOfThree = threeHour.attr('id')
+  var threeHourReady = idOfThree.substring(5,7)
+  var threeSelec = parseInt(threeHourReady)
+  var classHolder3 = $('#three')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === threeSelec){
+  classHolder3.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < threeSelec){
+    classHolder3.attr('class', 'table-success')
+  } else {
+    classHolder3.attr('class', 'table-secondary')
+  }
+
+  //block 4
+  var fourHour = $('#hour-4')
+  var idOfFour = fourHour.attr('id')
+  var fourHourReady = idOfFour.substring(5,7)
+  var fourSelec = parseInt(fourHourReady)
+  var classHolder4 = $('#four')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === fourSelec){
+  classHolder4.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < fourSelec){
+    classHolder4.attr('class', 'table-success')
+  } else {
+    classHolder4.attr('class', 'table-secondary')
+  }
+
+  //block 5
+  var fiveHour = $('#hour-5')
+  var idOfFive = fiveHour.attr('id')
+  var fiveHourReady = idOfFive.substring(5,7)
+  var fiveSelec = parseInt(fiveHourReady)
+  var classHolder5 = $('#five')
+
+  if(timeNow === 1 || 2 || 3 || 4 || 5){
+    nineSelec = 0
+    tenSelec = 0
+    elevenSelec = 0
+    tweleveSelec = 0 
+  }
+
+  if (timeNow === fiveSelec){
+  classHolder5.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
+  } else if (timeNow < fiveSelec){
+    classHolder5.attr('class', 'table-success')
+  } else {
+    classHolder5.attr('class', 'table-secondary')
+  }
+ 
   
 });
