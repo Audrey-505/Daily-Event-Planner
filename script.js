@@ -42,29 +42,30 @@ $(document).ready(function () {
   $('.btn').on('click', function (){
     var hourBlock = $(this).parent().attr('id')
     //console.log(hourBlock)
-    localStorage.setItem(hourBlock, valueOfEvent)
+    //localStorage.setItem(hourBlock, valueOfEvent)
     //localStorage.getItem(hourBlock)
     })
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
-  var elevenHour = $('#hour-11')
   var currentHour = moment().format('h')
   var fullReadyHour = `hour-${currentHour}`
   var readyHour = fullReadyHour.substring(5,7)
+  var elevenHour = $('#hour-11')
   var idOfEleven = elevenHour.attr('id')
   var elevenHourReady = idOfEleven.substring(5,7)
   var timeNow = parseInt(readyHour)
+  console.log(timeNow)
   var elevenSelec = parseInt(elevenHourReady)
-  //console.log(timeNow)
-  //console.log(elevenSelec)
+  var classHolder = $('#eleven')
 
-  /*if (timeNow === elevenSelec){
-  elevenHour.attr('class', 'present')//remove hardcoded past present and future classes from html
+  
+  if (timeNow === elevenSelec){
+  classHolder.attr('class', 'table-danger')//remove hardcoded past present and future classes from html
   } else if (timeNow < elevenSelec){
-    elevenHour.attr('class', 'future')
+    classHolder.attr('class', 'table-success')
   } else {
-    elevenHour.attr('class', 'past')
-  } */
+    classHolder.attr('class', 'table-secondary')
+  }
   
 });
