@@ -1,7 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html. **document.ready()?
-$(function () {
+$(document).ready(function () {
+//$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. **this is saying that if the id of time block 4pm for ex is '4o' than '4o' should be the key to retrieve the event
@@ -29,23 +30,20 @@ $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage.
-  /* var blockNine = $('#hour-9')
-  var saveBtn = blockNine.children()
-  saveBtn.on('click', function (){
-    var nineID = saveBtn.parent().attr('id')
-    console.log(nineID)
-    var valueOfEvent = 5
-    localStorage.setItem(nineID, valueOfEvent)
-    var result = localStorage.getItem(nineID)
-    console.log(result)
-  }) */
-  var valueOfEvent = 10
+  /* var valueOfEvent = 10
   var saveBtn = $('.btn')
   saveBtn.on('click', function (event){
   var hourBlock = event.target.parentNode.id 
   console.log(hourBlock)
   //localStorage.setItem(hourBlock, valueOfEvent)
   //localStorage.getItem(hourBlock)
-  })
+  }) */
+  var valueOfEvent = 10
+  $('.btn').on('click', function (){
+    var hourBlock = $(this).parent().attr('id');
+    //console.log(hourBlock)
+    localStorage.setItem(hourBlock, valueOfEvent)
+    //localStorage.getItem(hourBlock)
+    })
   
 });
