@@ -38,13 +38,14 @@ $(document).ready(function () {
   //localStorage.setItem(hourBlock, valueOfEvent)
   //localStorage.getItem(hourBlock)
   }) */
-  var valueOfEvent = 10
+  
+  /*var valueOfEvent = 10
   $('.btn').on('click', function (){
     var hourBlock = $(this).parent().attr('id')
     //console.log(hourBlock)
     //localStorage.setItem(hourBlock, valueOfEvent)
     //localStorage.getItem(hourBlock)
-    })
+    })*/
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
@@ -69,20 +70,35 @@ $(document).ready(function () {
       $(this).addClass('future')
 
     } 
-
-    /*if(currentHour === classBlock){
-      $(this).addClass('present')
-      /*classHolder.attr('class', 'table-danger')
-    } else if (currentHour > classBlock){
-      /*classHolder.attr('class', 'table-success')
-      $(this).removeClass('present')
-      $(this).addClass('past')
-    } else if (currentHour < classBlock){
-      $(this).removeClass('past')
-      $(this).addClass('future')
-      
-    }*/
-
   })
+
+  // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements.
+
+  /*$(".saveBtn").click(function (event) {
+    event.preventDefault();
+    var value = $(this).siblings(".time-block").val();
+    var time = $(this).parent().attr("id").split("-")[1];
+    localStorage.setItem(time, value);
+  });*/
+
+  var textArea = $('<textarea>')
+  var textSpace = $('.hour')
+  textArea.addClass('text')
+  textArea.attr('id', 'textid')
+  textArea.attr('placeholder', 'Type your event here...')
+  textSpace.append(textArea)
+
+  $('.btn').click(function (){
+    var event = $(this).siblings().children().val()
+    //var event = $(this).siblings('.text').text() why did this not work 
+    var hourBlock = $(this).parent().attr('id')
+    localStorage.setItem(hourBlock, event)
+  })
+
+  $('.btn').each(function(){
+    $(this).siblings().children().val(localStorage.getItem($(this).parent().attr('id')))
+  })
+  
   
 });
