@@ -48,18 +48,41 @@ $(document).ready(function () {
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
-  //var currentHour = moment().format('h')
-  $('.short').each(function (){
-    var classBlock = $(this).attr('id').substring(5,7)
-    var classHolder = $('.style')
-    var currentHour = moment().format('h')
+  $('.hour').each(function (){
+    var classBlock = Number($(this).parent().attr('id').substring(5,7))
+    //console.log(`classblock ${typeof(classBlock)}`)
+    //var classHolder = $('.style')
+    var currentHour = Number(moment().format("HH"))
+    //var currentHour = 14 (used for playing with dif times)
+    //console.log(typeof(currentHour))
 
-    if(currentHour === classBlock){
-      classHolder.attr('class', 'table-danger')
+    if(currentHour > classBlock){
+      $(this).addClass('past')
+      //$(this).addClass('present')
+      /*classHolder.attr('class', 'table-danger')*/
+    } else if (currentHour === classBlock){
+      /*classHolder.attr('class', 'table-success')*/
+      $(this).removeClass('past')
+      $(this).addClass('present')
     } else {
-      classHolder.attr('class', 'table-success')
-    }
-    
-  }) 
+      $(this).removeClass('present')
+      $(this).addClass('future')
+
+    } 
+
+    /*if(currentHour === classBlock){
+      $(this).addClass('present')
+      /*classHolder.attr('class', 'table-danger')
+    } else if (currentHour > classBlock){
+      /*classHolder.attr('class', 'table-success')
+      $(this).removeClass('present')
+      $(this).addClass('past')
+    } else if (currentHour < classBlock){
+      $(this).removeClass('past')
+      $(this).addClass('future')
+      
+    }*/
+
+  })
   
 });
